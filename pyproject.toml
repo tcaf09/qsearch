@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "qsearch"
+version = "0.1.0"
+description = "Quick terminal search and summarization"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    "ddgs",
+    "rich",
+    "questionary",
+    "readchar",
+    "requests",
+    "beautifulsoup4",
+    "google-genai",
+    "faker",
+]
+
+[project.scripts]
+qsearch = "qsearch.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["qsearch"]
